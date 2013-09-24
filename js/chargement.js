@@ -7,7 +7,18 @@ function affMenu(){
 		$('#load').remove();
 	}
 
-	$('body').prepend('<div id="menu"><div id="perso" class="perso perso1 spritePerso"></div><div id="bonus">Bonus gérer via JS</div><div id="level" class="bouton">Difficulté</div><div id="start" class="bouton">Démarrer</div></div>');
+	$.get(
+		 'html/menu.html',
+		 function (retour){
+		 	$('body').prepend(retour);
+
+		 	var desc = 'Bonus de vitesse : '+paramLeader[perso][0]+'%';
+		 	desc += '<br />Bonus de stockage : '+paramLeader[perso][1]+'%';
+		 	$('#leaderDesc').html(desc);
+		 	
+		 },
+		 'html'
+		 );
 
 }
 
@@ -23,4 +34,4 @@ var interval = setInterval(function(){
 		affMenu();
 	}
 
-},1000);
+},10);

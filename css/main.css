@@ -21,7 +21,7 @@ progress{
 	top: 50%;
 	left: 50%;
 	width: 400px;
-	height: 250px;
+	height: 200px;
 	margin: -125px 0px 0px -200px;
 	border:1px solid #1B295F;
 	box-shadow: 0px 0px 10px 2px #2C4198; 
@@ -29,26 +29,29 @@ progress{
 div.spritePerso{
 	background-image: url('../img/sprite_leader.jpg');
 	background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: top;
 }
-div.perso{
-	width: 150px;
-	height: 150px;
-	display: inline-block;
-	vertical-align: top;
-}
-div.perso1{background-position: 0px 0px;}
-div.perso2{background-position: -150px 0px;}
-div.perso3{background-position: -300px 0px;}
-div.perso4{background-position: -450px 0px;}
-div.perso5{background-position: -600px 0px;}
+
+div.perso0{background-position: 0px 0px;}
+div.perso1{background-position: -150px 0px;}
+div.perso2{background-position: -300px 0px;}
+div.perso3{background-position: -450px 0px;}
+div.perso4{background-position: -600px 0px;}
 
 #bonus{
 	display: inline-block;
 	width: 246px;
 	height: 146px;
-	border: 1px solid white;
 	color: white;
 	vertical-align: top;
+    position: relative;
+    /* SUPRESSION DE LA SECTION */
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none;
 }
 
 
@@ -104,4 +107,20 @@ div.bouton:active {
     top:1px;
 }
 
-
+div.fLeft,div.fRight{
+    position: absolute;
+    top: 114px;
+    background-image: url('../img/sprite_icones.png');
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+div.fLeft{
+    background-position: 0px 0px;
+    left:0px;
+}
+div.fRight{
+    background-position: -32px 0px;
+    left:214px;
+}
