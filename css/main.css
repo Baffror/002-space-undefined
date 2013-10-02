@@ -1,7 +1,13 @@
-body{
+body,html{
 	background-color: black;
+    margin:0px;
+    padding: 0px;
 }
-
+canvas{
+    margin:0px;
+    padding: 0px;
+    display:block;
+}
 /* CHARGEMENT */
 #load{
 	position:absolute;

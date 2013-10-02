@@ -30,4 +30,13 @@ $('body').on('click','#fLeft,#fRight',function(){
 /******************************************* DEMARRAGE PARTIE ***********************************************/
 $('body').on('click','#start',function(){
 	$('#menu').remove();
+
+	var height = window.innerHeight;
+	var width = window.innerWidth;
+	$('body').prepend('<canvas id="canvas" width="'+width+'" height="'+height+'"></canvas>');
+
+	elem = document.getElementById('canvas');
+	ctx = elem.getContext('2d');
+
+	loop();
 });

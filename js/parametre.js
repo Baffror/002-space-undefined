@@ -8,3 +8,5 @@ paramLeader[1] = Array(20,20);
 paramLeader[2] = Array(30,30);
 paramLeader[3] = Array(40,40);
 paramLeader[4] = Array(50,50);
+
+var elem,ctx = false;
