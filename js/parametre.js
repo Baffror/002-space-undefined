@@ -10,3 +10,6 @@ paramLeader[3] = Array(40,40);
 paramLeader[4] = Array(50,50);
 
 var elem,ctx = false;
+
+var height = window.innerHeight;
+var width = window.innerWidth;

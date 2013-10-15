@@ -9,34 +9,39 @@ window.requestAnimFrame = (function(){
     };
 })();
 
-var affImg = function(src,srcX,srcY,width,height,x,y){
+var affImg = function(s,sX,sY,w,h,x,y){
 
 	var img = new Image();
-	img.src = src;
+	img.src = s;
 
-	this.srcX = srcX;
-	this.srcY = srcY;
-	this.width = width;
-	this.height = height;
-	this.x = x;
-	this.y = y;
+	this.srcX = sX;
+	this.srcY = sY;
+	this.width = w;
+	this.height = h;
+	this.posx = x-this.width/2;
+	this.posy = y-this.height/2;
 
 
-	this.draw = function(){
+	this.draw = function(angle){
+
+		if ( angle === undefined ){ angle = 0; }
 
 		if (ctx) {
-			ctx.drawImage(img,srcX,srcY,width,height,x,y,width,height);
+
+			ctx.save();
+
+			ctx.translate(width/2,height/2);
+			ctx.rotate(Math.PI/180*angle);
+
+			ctx.drawImage(img,this.srcX,this.srcY,this.width,this.height,this.posx,this.posy,this.width,this.height);
+
+			ctx.restore();
+		
 		} else {
 			console.log('ctx indéfini');
 		}
 
 	}
-	this.setSrcX = function(newSrcX){
-		this.srcX = newSrcX;
-	}
 
-	this.valeur = function(){
-		console.log('srcX=>'+srcX+'srcY=>'+srcY+'width=>'+width+'height=>'+height+'x=>'+x+'y=>'+y)
-	}
 }
 

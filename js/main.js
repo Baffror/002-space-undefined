@@ -1,14 +1,11 @@
-var flotte = new affImg('img/sprite_jeu.gif',0,0,50,50,100,100);
+var flotte = new affImg('img/sprite_jeu.gif',0,0,50,50,0,0);
 
-flotte.srcX = 50;
-flotte.srcY = 0;
-var cpt = 0;
+var cpt = 0 ;
 function loop(){
 
+	ctx.clearRect(0,0,width,height);
 	cpt++;
-	flotte.setSrcX(cpt);
-	flotte.srcX = 150;
-	flotte.draw();
+	flotte.draw(180);
 
 	window.requestAnimFrame(loop);
 }
